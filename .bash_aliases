@@ -1,0 +1,5 @@
+alias op='opencode'
+alias agent='cursor-agent'
+alias venv='source .venv/bin/activate'
+alias design='cd ~/open-design && pnpm tools-dev run web'
+alias sync='cd ~/Documents/projects/my-notes && npm run quartz -- sync'

@@ -1,0 +1,12 @@
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+# Publish Obsidian notes marked with `publish: true` to portfolio
+pubnotes() {
+  ~/Documents/projects/my-notes/publish-notes.sh
+}
+
+# Bind Alt+P to run pubnotes (uncomment if desired)
+# bind -x '"\ep":pubnotes'
+export PATH="$HOME/.local/bin:$PATH"
