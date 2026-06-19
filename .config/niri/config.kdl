@@ -130,9 +130,9 @@ window-rule {
 
 
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 5
     clip-to-geometry true
-    opacity 0.75
+    opacity 0.8
 }
 
 

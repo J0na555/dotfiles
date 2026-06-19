@@ -1,4 +1,5 @@
 alias op='opencode'
+alias cd='codex'
 alias agent='cursor-agent'
 alias venv='source .venv/bin/activate'
 alias design='cd ~/open-design && pnpm tools-dev run web'
