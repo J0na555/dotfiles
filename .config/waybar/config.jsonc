@@ -10,26 +10,23 @@
   // Positions
   "modules-left": [
     "custom/idle_inhibitor",
-    "hyprland/workspaces", // workspaces
-    "hyprland/window" // window title
+    "hyprland/workspaces" // workspaces
+    // "hyprland/window" // window title
   ],
 
   "modules-center": [
-    "custom/cpu",
-    "custom/cpuinfo",
-    "memory",
     "clock#time",
     "clock#date"
   ],
 
   "modules-right": [
-    "network", // network speed
+    // "network", // network speed
     "tray",
     "privacy",
-    "hyprland/language", // language indicator
+    // "hyprland/language", // language indicator
     "pulseaudio",
     "pulseaudio#microphone",
-    "custom/backlight",
+    // "custom/backlight",
     "power-profiles-daemon",
     "battery",
     "custom/power" // power button
@@ -78,39 +75,39 @@
 
 
   // Central modules
-  "custom/cpu": {
-    "exec": "~/.config/bin/cpu-usage.sh",
-    "return-type": "json",
-    "on-click": "btop",
-    "tooltip": true,
-    "interval": 5,
-    "min-length": 6,
-    "max-length": 6
-  },
-  "custom/cpuinfo": {
-    "exec": "~/.config/bin/cpu-info.sh",
-    "return-type": "json",
-    "format": "{}",
-    "on-click": "htop",
-    "tooltip": true,
-    "interval": 5,
-    "min-length": 6,
-    "max-length": 6
-  },
+  // "custom/cpu": {
+  //   "exec": "~/.config/bin/cpu-usage.sh",
+  //   "return-type": "json",
+  //   "on-click": "btop",
+  //   "tooltip": true,
+  //   "interval": 5,
+  //   "min-length": 6,
+  //   "max-length": 6
+  // },
+  // "custom/cpuinfo": {
+  //   "exec": "~/.config/bin/cpu-info.sh",
+  //   "return-type": "json",
+  //   "format": "{}",
+  //   "on-click": "htop",
+  //   "tooltip": true,
+  //   "interval": 5,
+  //   "min-length": 6,
+  //   "max-length": 6
+  // },
 
-  "memory": {
-    "states": {
-      "c": 90
-    },
-    "format": "󰘚 {percentage}%",
-    "format-c": "󰀪 {percentage}%",
-    "tooltip": true,
-    "tooltip-format": "Memory Used: {used:0.1f} GB / {total:0.1f} GB",
-    "interval": 5,
-    "on-click": "kitty sh -c btop",
-    "min-length": 6,
-    "max-length": 6
-  },
+  // "memory": {
+  //   "states": {
+  //     "c": 90
+  //   },
+  //   "format": "󰘚 {percentage}%",
+  //   "format-c": "󰀪 {percentage}%",
+  //   "tooltip": true,
+  //   "tooltip-format": "Memory Used: {used:0.1f} GB / {total:0.1f} GB",
+  //   "interval": 5,
+  //   "on-click": "kitty sh -c btop",
+  //   "min-length": 6,
+  //   "max-length": 6
+  // },
 
   "clock#time": {
     "format": "󱑂 {:%H:%M}",
@@ -144,18 +141,18 @@
 
 
   // Right modules
-  "network": {
-    "interface": "*0",
-    "interval": 5,
-    "format": " {bandwidthTotalBytes}",
-    "format-alt": " {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-disconnected": "",
-    "tooltip-format": "  {ifname} \n {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "tooltip-format-wifi": "󰖩 {essid} ({signalStrength}%) \n {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "on-click-right": "nmtui",
-    "max-length": 24
-  },
+  // "network": {
+  //   "interface": "*0",
+  //   "interval": 5,
+  //   "format": " {bandwidthTotalBytes}",
+  //   "format-alt": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+  //   "format-disconnected": "",
+  //   "tooltip-format": "  {ifname} \n {bandwidthUpBytes}  {bandwidthDownBytes}",
+  //   "tooltip-format-wifi": "󰖩 {essid} ({signalStrength}%) \n {bandwidthUpBytes}  {bandwidthDownBytes}",
+  //   "tooltip-format-disconnected": "Disconnected",
+  //   "on-click-right": "nmtui",
+  //   "max-length": 24
+  // },
 
   "tray": {
     "icon-size": 13,
@@ -185,15 +182,6 @@
         "name": "cava"
       }
     ]
-  },
-
-  "hyprland/language": {
-    "format": "󰇧 {}",
-    "format-en": "EN",
-    "format-ru": "RU",
-    "on-click": "hyprctl switchxkblayout current next",
-    "min-length": 4,
-    "max-length": 4
   },
 
   "pulseaudio": {

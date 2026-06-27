@@ -188,4 +188,13 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    // App launchers
+    Alt+C hotkey-overlay-title="Launch Cursor" { spawn "cursor"; }
+    Alt+X hotkey-overlay-title="Launch VS Code" { spawn "code"; }
+    Alt+L hotkey-overlay-title="Launch Telegram" { spawn "Telegram"; }
+    Alt+O hotkey-overlay-title="Launch Obsidian" { spawn "obsidian"; }
+    Alt+Z hotkey-overlay-title="Launch Zen Browser" { spawn "zen-browser"; }
+    Alt+B hotkey-overlay-title="Launch Firefox" { spawn "firefox"; }
+    Alt+V hotkey-overlay-title="Launch Brave" { spawn "brave"; }
 }

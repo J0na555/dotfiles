@@ -5,66 +5,58 @@
 -- https://wiki.hyprland.org/Configuring/Window-Rules/
 -- https://wiki.hyprland.org/Configuring/Workspace-Rules/
 
-
 --- Floating windows
 -- Calculator
 hl.window_rule({
-    name = "calculator",
-    match = { class = "^(org.gnome.Calculator)$" },
-    float = true,
-    size = { 400, 500 },
+	name = "calculator",
+	match = { class = "^(org.gnome.Calculator)$" },
+	float = true,
+	size = { 400, 500 },
 })
 
 -- General floating windows
-local FLOAT_CLASSES = "^(org.pulseaudio.pavucontrol|nm-connection-editor"
-    .. "|blueman-manager|nekobox|waypaper)$"
+local FLOAT_CLASSES = "^(org.pulseaudio.pavucontrol|nm-connection-editor" .. "|blueman-manager|nekobox|waypaper)$"
 hl.window_rule({
-    name = "float-classes",
-    match = { class = FLOAT_CLASSES },
-    center = true,
-    float = true,
-    size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
+	name = "float-classes",
+	match = { class = FLOAT_CLASSES },
+	center = true,
+	float = true,
+	size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
 })
-
 
 --- Dialog windows
 local DIALOG_TITLES = "^(Open Files?|Pick Files?|Choose Files|Choose a file"
-    .. "|Select a File|Choose wallpaper|Open Folders?|Add Folders?( to Workspace)?"
-    .. "|Save As|Library|File Upload|.*wants to (save|open))$"
+	.. "|Select a File|Choose wallpaper|Open Folders?|Add Folders?( to Workspace)?"
+	.. "|Save As|Library|File Upload|.*wants to (save|open))$"
 hl.window_rule({
-    name = "dialogs",
-    match = { title = DIALOG_TITLES },
-    center = true,
-    float = true,
-    size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
+	name = "dialogs",
+	match = { title = DIALOG_TITLES },
+	center = true,
+	float = true,
+	size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
 })
-
 
 --- Picture-in-Picture
 local PiP = "^(Picture.?in.?[Pp]icture)$"
 hl.window_rule({
-    name = "picture-in-picture",
-    match = { title = PiP },
-    border_size = 0,
-    float = true,
-    keep_aspect_ratio = true,
-    move = { "(monitor_w*0.71)", "(monitor_h*0.13)" },
-    opacity = "1.0 1.0",
-    pin = true,
-    size = { "(monitor_w*0.25)", "(monitor_h*0.25)" },
-    resize_on_border = true,
+	name = "picture-in-picture",
+	match = { title = PiP },
+	border_size = 0,
+	float = true,
+	keep_aspect_ratio = true,
+	move = { "(monitor_w*0.71)", "(monitor_h*0.13)" },
+	opacity = "1.0 1.0",
+	pin = true,
+	size = { "(monitor_w*0.25)", "(monitor_h*0.25)" },
 })
-
 
 --- Opacity 100%
-local OPAQUE_CLASSES = "^(libreoffice|ONLYOFFICE|qemu|vlc"
-    .. "|com.obsproject.Studio|imv|org.gnome.NautilusPreviewer)$"
+local OPAQUE_CLASSES = "^(libreoffice|ONLYOFFICE|qemu|vlc" .. "|com.obsproject.Studio|imv|org.gnome.NautilusPreviewer)$"
 hl.window_rule({
-    name = "opaque-apps",
-    match = { class = OPAQUE_CLASSES },
-    opaque = true,
+	name = "opaque-apps",
+	match = { class = OPAQUE_CLASSES },
+	opaque = true,
 })
-
 
 --- App-specific rules
 -- KDE Connect
@@ -111,7 +103,6 @@ hl.window_rule({
 --     float = true,
 -- })
 
-
 --- Workspace-specific rules
 -- Games
 -- hl.window_rule({
@@ -121,7 +112,6 @@ hl.window_rule({
 --     no_shadow = true,
 --     opaque = true,
 -- })
-
 
 --- Technical fixes & overrides
 -- Tearing
@@ -143,32 +133,32 @@ hl.window_rule({
 
 -- Ignore maximize requests from apps
 hl.window_rule({
-    name = "ignore-maximize",
-    match = { class = ".*" },
-    suppress_event = "maximize",
+	name = "ignore-maximize",
+	match = { class = ".*" },
+	suppress_event = "maximize",
 })
 
 -- Fix some dragging issues with XWayland
 hl.window_rule({
-    name = "xwayland-drag-fix",
-    match = {
-        class = "^$",
-        title = "^$",
-        float = true,
-        fullscreen = false,
-        pin = false,
-        xwayland = true,
-    },
-    no_focus = true,
+	name = "xwayland-drag-fix",
+	match = {
+		class = "^$",
+		title = "^$",
+		float = true,
+		fullscreen = false,
+		pin = false,
+		xwayland = true,
+	},
+	no_focus = true,
 })
 
 -- Fix blur around XWayland windows
 -- Variant 1
 hl.window_rule({
-    name = "xwayland-blur-fix",
-    match = { class = "^()$", title = "^()$" },
-    no_blur = true,
-    opacity = "0.98 override",
+	name = "xwayland-blur-fix",
+	match = { class = "^()$", title = "^()$" },
+	no_blur = true,
+	opacity = "0.98 override",
 })
 -- Variant 2
 -- hl.window_rule({
@@ -178,13 +168,12 @@ hl.window_rule({
 --     opacity = "0.98 override",
 -- })
 
-
 --- Screen Sharing
 -- No Screen Share for Authentication Window and KeePassXC
 hl.window_rule({
-    name = "no-screen-share-apps",
-    match = { class = "^(polkit-gnome-authentication-agent-1|org.keepassxc.KeePassXC)$" },
-    no_screen_share = true,
+	name = "no-screen-share-apps",
+	match = { class = "^(polkit-gnome-authentication-agent-1|org.keepassxc.KeePassXC)$" },
+	no_screen_share = true,
 })
 
 -- NoScreenShare for SwayNC
@@ -193,3 +182,4 @@ hl.window_rule({
 -- NoScreenShare (~/.config/bin/toggle-noscreenshare.sh)
 -- hl.layer_rule({ match = { namespace = "^(.*)$" }, no_screen_share = true })
 -- hl.window_rule({ match = { initial_class = "^(.*)$" }, no_screen_share = true })
+

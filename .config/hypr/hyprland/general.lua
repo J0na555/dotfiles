@@ -191,7 +191,7 @@ hl.animation({ leaf = "windowsIn", enabled = true, speed = 6, bezier = "overshot
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 6, bezier = "overshot", style = "popin 60%" })
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 5, bezier = "wind", style = "slide" })
 
-hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "wind" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "default" })
 
 hl.animation({ leaf = "fade", enabled = true, speed = 4, bezier = "default" })
 
@@ -201,7 +201,7 @@ hl.animation({ leaf = "fade", enabled = true, speed = 4, bezier = "default" })
 ----------------
 
 -- https://wiki.hypr.land/Configuring/Gestures/
-hl.gesture({ fingers = 3, direction = "swipe", action = "move" })
-hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
-hl.gesture({ fingers = 4, direction = "up", scale = 1.5, action = "fullscreen" })
-hl.gesture({ fingers = 4, direction = "down", scale = 1.5, action = "fullscreen", mode = "maximize" })
+hl.gesture({ fingers = 4, direction = "swipe", action = "move" })
+hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+hl.gesture({ fingers = 3, direction = "up", scale = 1.5, action = "fullscreen" })
+hl.gesture({ fingers = 3, direction = "down", scale = 1.5, action = "fullscreen", mode = "maximize" })
